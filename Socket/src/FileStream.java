@@ -9,9 +9,16 @@ public class FileStream {
 		String Filepath = "/Users/joon/Downloads/sample.mp4";
 		
 		try {
+			// Constructor 생성 
 			FileInputStream is = new FileInputStream(Filepath);
-			System.out.println(is);
-		} catch (FileNotFoundException e) {
+			
+			byte[] readData = is.readNBytes(3000);
+			
+			for (byte b : readData) {
+				System.out.println(b);
+			}
+
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
